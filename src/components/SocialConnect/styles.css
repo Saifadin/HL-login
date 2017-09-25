@@ -1,0 +1,31 @@
+.networkButton {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border: 1px solid #2c577d;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #2c577d;
+  border-color: #2c577d;
+  font-size: 12px;
+  line-height: 24px;
+  transition: all ease 0.3s;
+}
+
+.networkButton:hover {
+  color: white;
+  border-color: white !important;
+}
+
+.networkIcon {
+  padding-right: 16px;
+  border-right: 1px solid;
+}
+
+.networkText {
+  flex: 1;
+  text-align: center;
+}

@@ -1,0 +1,25 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.formLabel {
+  font-weight: 300;
+}
+
+.submitButton {
+  border: none;
+  color: #fff;
+  background: #449d44;
+  font-weight: 300;
+  font-size: 16px;
+  transition: all ease 0.5s;
+  height: 40px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+}
+
+.submitButton:hover {
+  background: #5cb85c;
+}
