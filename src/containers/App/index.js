@@ -8,9 +8,12 @@ import queryString from 'query-string'
 import Header from '../../components/Header'
 import Modal from '../../components/Modal'
 import Home from '../Home'
+import Login from '../Login'
+import Register from '../Register'
 import appStyles from './styles.css'
 
 class App extends React.Component {
+  
   componentWillMount() {
     const query = queryString.parse(this.props.location.search)
     if (query.language) {
@@ -25,7 +28,10 @@ class App extends React.Component {
           <Header />
           <main className={appStyles.modalWrapper}>
             <Route exact path='/' component={Home} />
-            <Route exact path='/login' component={Modal} />
+            <Modal>
+              <Route exact path='/login' component={Login} />
+              <Route exact path='/register' component={Register} />
+            </Modal>
           </main>
         </div>
       </div>

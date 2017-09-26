@@ -1,10 +1,8 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-import Login from '../../containers/Login'
-import Register from '../../containers/Register'
 import SocialConnect from '../../components/SocialConnect'
 import modalStyles, {isActive} from './styles.css'
 
@@ -20,7 +18,12 @@ class Modal extends React.Component {
   }
 
   changeMode(newMode) {
-    this.setState({mode: newMode});
+    console.log(newMode)
+    this.setState({ mode: newMode })
+  }
+
+  componentWillMount() {
+    this.changeMode(this.props.location.pathname.substring(1))
   }
 
   render() {
@@ -34,8 +37,7 @@ class Modal extends React.Component {
             { this.props.language === 'EN' ? 'Register' : 'Registrierung' }
           </NavLink>
         </div>
-        <Route exact path='/login' component={Login}></Route>
-        <Route exact path='/register' component={Register}></Route>
+        { this.props.children }
         <div className={modalStyles.separator}>
           <div className={modalStyles.separatorText}>{ this.props.language === 'EN' ? 'or' : 'oder' }</div>
         </div>
@@ -49,6 +51,7 @@ class Modal extends React.Component {
 
 const mapStateToProps = state => ({
   language: state.language.language,
+  location: state.routing.location,
   socialNetworks: state.socialConnect.socialNetworks
 })
 
