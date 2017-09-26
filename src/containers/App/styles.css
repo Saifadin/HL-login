@@ -1,0 +1,30 @@
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #ccc;
+  background: url('/Homelike-BG.jpg');
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.appOverlay {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+  overflow: scroll;
+  flex-direction: column;
+}
+
+.modalWrapper {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 64px;
+}

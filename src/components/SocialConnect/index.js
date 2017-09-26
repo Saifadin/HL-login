@@ -1,4 +1,5 @@
 import React from 'react'
+
 import socialConnectStyles from './styles.css'
 
 function SocialConnect({ iconName, name, mode, hoverClass, language }) {

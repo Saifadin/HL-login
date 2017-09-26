@@ -1,15 +1,16 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import loginStyles from './styles.css'
 import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
+
+import loginStyles from './styles.css'
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      username: '',
+      email: '',
       password: ''
     };
 
@@ -30,18 +31,19 @@ class Login extends React.Component {
   _onLoginSubmit(e) {
     e.preventDefault();
     console.log(this.state);
+    // Here the login funcionality will be executed
   }
 
   render() {
     return (
       <form className={loginStyles.form} onSubmit={(event) => this._onLoginSubmit(event)}>
-        <FormGroup controlId="formControlsEmail">
+        <FormGroup controlId="formControlEmail">
           <ControlLabel className={loginStyles.formLabel}>{ this.props.language === 'EN' ? 'Email address' : 'Email-Adresse' }</ControlLabel>
-          <FormControl type="email" placeholder="max.m@me.de" onChange={(event) => this._handleInputChange(event)} />
+          <FormControl type="email" placeholder="max.m@me.de" name='email' onChange={(event) => this._handleInputChange(event)} />
         </FormGroup>
-        <FormGroup controlId="formControlsPassword">
+        <FormGroup controlId="formControlPassword">
           <ControlLabel className={loginStyles.formLabel}>{ this.props.language === 'EN' ? 'Password' : 'Passwort' }</ControlLabel>
-          <FormControl type="password" placeholder='********' onChange={(event) => this._handleInputChange(event)} />
+          <FormControl type="password" placeholder='********' name='password' onChange={(event) => this._handleInputChange(event)} />
         </FormGroup>
         <button className={loginStyles.submitButton}>{ this.props.language === 'EN' ? 'Login' : 'Einloggen' }</button>
       </form>

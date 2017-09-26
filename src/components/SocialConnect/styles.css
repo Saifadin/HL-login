@@ -20,6 +20,10 @@
   border-color: white !important;
 }
 
+.networkButton:focus {
+  outline: none;
+}
+
 .networkIcon {
   padding-right: 16px;
   border-right: 1px solid;

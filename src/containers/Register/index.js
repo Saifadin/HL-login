@@ -12,7 +12,7 @@ class Register extends React.Component {
     this.state = {
       firstname: '',
       lastname: '',
-      username: '',
+      emails: '',
       password: '',
     };
     this._handleInputChange = this._handleInputChange.bind(this);
